@@ -2,11 +2,12 @@
 <html>
   <head>
     <title>
-      Random Generator
+      Random Number Generator
     </title>
   </head>
   <body>
-    <h1>Random Generator</h1>
+    <div align="center">
+    <h1>Random Number Generator</h1>
     <label>Result: </label>
     <label id="result">-</label><br><br>
 <form>
@@ -20,14 +21,20 @@
   <button id="10" type="button" onclick="preset(this.id)">1-10</button>
   <button id="100" type="button" onclick="preset(this.id)">1-100</button>
   <button id="1000" type="button" onclick="preset(this.id)">1-1000</button>
-  <button type="reset">Reset</button>
+  <button type="reset">Reset</button><br><br>
+  <label>History</label><br><br>
+  <textarea id="history" cols="40" rows="5"></textarea>
 </form>
     <script>
     function random(){
       var str = document.getElementById("start").value;
       var end = document.getElementById("end").value;
-      if(str<=end)
-      document.getElementById("result").innerHTML = Math.floor(Math.random()*(end-str+1))+Math.floor(str);
+      var rslt;
+      if(str<=end){
+      rslt = Math.floor(Math.random()*(end-str+1))+Math.floor(str);
+      document.getElementById("result").innerHTML = rslt;
+      document.getElementById("history").value = document.getElementById("history").value+rslt+" ";
+      }
       else document.getElementById("result").innerHTML = "Start value more than End value."
     }
     function preset(clicked_id){
@@ -37,5 +44,6 @@
     }
     </script>
 
+  </div>
   </body>
 </html>

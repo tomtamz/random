@@ -7,21 +7,33 @@
   </head>
   <body>
     <h1>Random Generator</h1>
-    <p id="one">-</p>
-
-  <label for="fname">Start: </label>
-  <input type="number" id="start" name="start"><br><br>
-  <label for="lname">End: </label>
-  <input type="number" id="end" name="end"><br><br>
-  <button onclick="random()">Random</button>
-
+    <label>Result: </label>
+    <label id="result">-</label><br><br>
+<form>
+  <label>Start: </label>
+  <input type="number" id="start"><br><br>
+  <label>End: </label>
+  <input type="number" id="end"><br><br>
+  <button type="button" onclick="random()">Random</button><br><br>
+  <label>Preset: </label>
+  <button id="6" type="button" onclick="preset(this.id)">1-6</button>
+  <button id="10" type="button" onclick="preset(this.id)">1-10</button>
+  <button id="100" type="button" onclick="preset(this.id)">1-100</button>
+  <button id="1000" type="button" onclick="preset(this.id)">1-1000</button>
+  <button type="reset">Reset</button>
+</form>
     <script>
     function random(){
       var str = document.getElementById("start").value;
       var end = document.getElementById("end").value;
       if(str<=end)
-      document.getElementById("one").innerHTML = Math.floor(Math.random()*(end-str+1))+Math.floor(str);
-      else document.getElementById("one").innerHTML = "Start value more than End value."
+      document.getElementById("result").innerHTML = Math.floor(Math.random()*(end-str+1))+Math.floor(str);
+      else document.getElementById("result").innerHTML = "Start value more than End value."
+    }
+    function preset(clicked_id){
+      var id = clicked_id;
+      document.getElementById("start").value = 1;
+      document.getElementById("end").value = id;
     }
     </script>
 

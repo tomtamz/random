@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Producer</title>
+  <style>
+  <!--
+  .styling{
+  background-color:black;
+  color:lime;
+  font: bold 16px MS Sans Serif;
+  padding: 3px;
+  }
+  </style>
+</head>
+    <center>
+      <img src="Logo_kmitl.png" width="256"height="256">
+
+    <body background ="classroom.jpg" bgproperties="fixed" width="1920" height="1080">
+    <center>
+      <FONT Face="Angsana New (หัวเรื่องแบบ CS)" size="5">
+        <div id="square "width="256"height="256"></div>
+    <h1>คณะผู้จัดทำ</h1>
+    <label>61050289		ศักรินทร์  ขัติยะ ภาควิชาวิทยาการคอมพิวเตอร์</label><br>
+    <label>61050298		ศุภากร ภาษิตานนท์	ภาควิชาวิทยาการคอมพิวเตอร์</label><br>
+    <label>61050319		อภิสิทธิ์ คงเนียม	ภาควิชาวิทยาการคอมพิวเตอร์</label><br>
+    <label>61050325		เอกสิทธิ์ ตั้งวิจิตรพันธ์	ภาควิชาวิทยาการคอมพิวเตอร์</label><br>
+    <label>61050959		ศุภวิชญ์ สุขกันตะ	ภาควิชาวิทยาการคอมพิวเตอร์</label><br><br>
+
+    <a href="index.html"><button type="button" onclick=""> <FONT size="4">Index</Font> </button></a><br><br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <center>
+      <span id="digitalclock" class="styling"></span>
+
+    <script>
+    <!--
+
+    var alternate=0
+    var standardbrowser=!document.all&&!document.getElementById
+
+    if (standardbrowser)
+    document.write('<form name="tick"><input type="text" name="tock" size="11"></form>')
+
+    function show(){
+    if (!standardbrowser)
+    var clockobj=document.getElementById? document.getElementById("digitalclock") : document.all.digitalclock
+    var Digital=new Date()
+    var hours=Digital.getHours()
+    var minutes=Digital.getMinutes()
+    var dn="AM"
+
+    if (hours==12) dn="PM"
+    if (hours>12){
+    dn="PM"
+    hours=hours-12
+    }
+    if (hours==0) hours=12
+    if (hours.toString().length==1)
+    hours="0"+hours
+    if (minutes<=9)
+    minutes="0"+minutes
+
+    if (standardbrowser){
+    if (alternate==0)
+    document.tick.tock.value=hours+" : "+minutes+" "+dn
+    else
+    document.tick.tock.value=hours+"   "+minutes+" "+dn
+    }
+    else{
+    if (alternate==0)
+    clockobj.innerHTML=hours+"<font color='lime'> : </font>"+minutes+" "+"<sup style='font-size:1px'>"+dn+"</sup>"
+    else
+    clockobj.innerHTML=hours+"<font color='black'> : </font>"+minutes+" "+"<sup style='font-size:1px'>"+dn+"</sup>"
+    }
+    alternate=(alternate==0)? 1 : 0
+    setTimeout("show()",1000)
+    }
+    window.onload=show
+    </script>
+
+    </Font>
+    </body>
+</html>
